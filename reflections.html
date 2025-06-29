@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reflections</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+  
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️ Light Mode';
+    }
+  
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+  
+
+<body>
+    <header>
+        <h1>Ryutaro’s Thinking Lab</h1>
+        <nav>
+          <a href="index.html">Home</a> |
+          <a href="about.html">About</a> |
+          <a href="projects.html">Projects</a> |
+          <a href="reflections.html">Reflections</a>
+        </nav>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+      </header>
+      
+
+  <main>
+    <h2>Reflections</h2>
+  
+    <h3>💡 Thought: What is "Good"?</h3>
+    <p>Many people define "good" by what feels good or makes others happy — but is that enough? I think “good” needs a stronger foundation. Inspired by Nietzsche, I started questioning whether our morality is just a system that protects comfort and weakness. This led me to reflect on power, systems, and how beliefs evolve — a blend of philosophy and social observation.</p>
+  
+    <h3>💻 Thought: Why I Love Computer Engineering</h3>
+    <p>I see engineering not just as a technical field, but as a form of creative problem-solving. When I code, I’m not just building software — I’m learning how logic can create tools that shape real-world experiences. My dream is to build systems that improve lives, especially in areas like sustainable finance or education.</p>
+  
+    <h3>🧠 Thought: Philosophy in Code</h3>
+    <p>What if a program could evaluate ethical decisions? What if we taught AI systems to reason like philosophers? These questions may seem far off, but exploring them has made me curious about how technology and ethics can be combined. Maybe code and conscience don’t have to be separate things.</p>
+  </main>
+  
+
+  <footer>
+    <p>© 2025 Ryutaro D.</p>
+  </footer>
+</body>
+</html>

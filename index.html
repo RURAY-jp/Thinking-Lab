@@ -5,20 +5,43 @@
   <title>Ryutaro’s Thinking Lab</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+<script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+  
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️ Light Mode';
+    }
+  
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+  
+
 <body>
-  <header>
+    <header>
     <h1>Ryutaro’s Thinking Lab</h1>
     <nav>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="projects.html">Projects</a> |
-      <a href="reflections.html">Reflections</a>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="projects.html">Projects</a> |
+        <a href="reflections.html">Reflections</a>
     </nav>
-  </header>
+    <button id="theme-toggle">🌙 Dark Mode</button>
+    </header>      
 
   <main>
     <h2>Welcome!</h2>
-    <p>This is where I explore ideas in computer engineering, finance, and philosophy.</p>
+    <p>This is where I explore ideas in computer engineering, economics, religion, and philosophy.</p>
+    <p>I built this site to reflect my curiosity, share my projects, and keep track of what I'm learning.</p>
   </main>
 
   <footer>
